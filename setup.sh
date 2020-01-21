@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo pacman -S git go curl wget zsh
+sudo pacman -S git go curl wget zsh docker --noconfirm
 
 sh yay.sh
 
