@@ -6,3 +6,5 @@ sh yay.sh
 sh rvm.sh
 
 sh nvm.sh
+
+sh reboot.sh
