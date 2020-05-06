@@ -1,2 +1,3 @@
 #!/bin/bash
-yay -S visual-studio-code-bin --noconfirm
+
+sudo snap install code --classic

@@ -1,10 +1,9 @@
 #!/bin/bash
-sudo pacman -S git go curl wget zsh docker --noconfirm
+
+sudo pacman -S git go curl wget zsh --noconfirm
 
 sh yay.sh
 
-sh rvm.sh
-
-sh nvm.sh
+sh asdf.sh
 
 sh reboot.sh
