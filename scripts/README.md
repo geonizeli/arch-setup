@@ -4,10 +4,9 @@
 
     Just run ./setup.sh and await.
 
-## What will be installed?
+## What will be installed
 
-- Ruby Version Manager (RVM)
-- Node Version Manager (NVM)
+- ASDF
 - YAY (AUR Helper)
 - Visual Studio Code
 - ZSH
