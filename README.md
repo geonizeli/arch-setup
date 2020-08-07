@@ -150,9 +150,14 @@ Edite o arquivo de configuração do pacman, procure por Candy com CTRL + W e de
 
     nano /etc/pacman.conf
 
-Rode uma atualização de pacotes e veja a mágica
+Rode uma atualização de pacotes para ver a mágica
 
     pacman -Syu
+    
+### Instale o Kernel LTS (opicional)
+Você pode querer usar o Kernel LTS por padrão, ou em caso de subirem uma versão com algum bug para o repositório (é muito raro mas pode acontecer, nenhum bug grave, tavez incompatibilidade com algum hardware, o que será resolvido em algum momento).
+
+    pacman -S linux-lts
 
 ### Iniciar ambiente Ramdisk
 
@@ -168,7 +173,7 @@ Instale o systemd-boot em /boot
 
     bootctl install
 
-Crie 3 arquivos
+Crie os seguintes arquivos:
 
 /boot/loader/entries/arch.conf
 
@@ -177,7 +182,7 @@ Crie 3 arquivos
     initrd /initramfs-linux.img
     options root=/dev/sda6 rw
 
-/boot/loader/entries/arch-lts.conf
+/boot/loader/entries/arch-lts.conf (caso tenha escolhido instalar o linux-lts)
 
     title Arch LTS
     linux /vmlinuz-linux-lts
@@ -186,8 +191,8 @@ Crie 3 arquivos
 
 /boot/loader/loader.conf
 
-    timeout 2
-    default arch
+    timeout 2 // tempo de espera na seleção de kernel durante a inicialização do sistema
+    default arch // use arch-lts para ter o linux-lts como padrão
 
 Se quiser que o LTS seja o padrão pode substituir por arch-lts, ele puxará pelo nome do arquivo.
 
@@ -227,7 +232,7 @@ Você pode simplesmente rodar
     pacman -S gnome gnome-extras
     systemctl enable gdm
 
-Mas se você odiar pacotes inuteis como eu, vai preferir rodar:
+Mas se você odiar pacotes inuteis como eu vai preferir rodar:
 
     sudo pacman -S gnome-shell gnome-control-center gdm gnome-terminal gnome-shell-extensions gnome-settings-daemon gnome-menus gnome-keyring
     systemctl enable gdm
